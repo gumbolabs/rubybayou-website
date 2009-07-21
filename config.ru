@@ -20,5 +20,10 @@ if File.exists?('.production')
 end
 
 require ::File.expand_path('../app', __FILE__)
+
+if File.exists?('.production')
+  Ramaze.options.mode = :live
+end
+
 Ramaze.start(:root => __DIR__, :started => true)
 run Ramaze

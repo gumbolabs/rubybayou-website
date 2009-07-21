@@ -5,9 +5,12 @@ html, body {
 
 #content_area {
   height: 400px;
-  /*overflow: hidden;*/
   background-color: #FFFFFF;
   padding-bottom: 8px;
+}
+
+#footer {
+  
 }
 
 .container {
@@ -20,6 +23,8 @@ html, body {
 }
 
 #logo {
+  width: 410px;
+  height: 195px;
   position: absolute;
   top: 253px;
   right: 0;
@@ -31,6 +36,13 @@ html, body {
   left: 0px;
 }
 
+#copyright {
+  width: 410px;
+  position: absolute;
+  top: 450px;
+  right: 0px;
+}
+
 .column {
   float: left;
   z-index: 0;
@@ -38,8 +50,7 @@ html, body {
 
 #latest_blog {
   width: 280px;
-/*  margin-right: 20px;*/
-  margin-right: -20px;
+  margin-right: -280px;
   margin-bottom: 1em;
   padding-bottom: 0.5em;
   border-bottom: 1px solid #CCCCCC;
@@ -48,7 +59,7 @@ html, body {
 #twitter {
   width: 220px;
   margin-right: -220px;
-  margin-left: 120px;
+  margin-left: 340px;
   margin-bottom: 1em;
   padding-bottom: 0.5em;
   top: 0;

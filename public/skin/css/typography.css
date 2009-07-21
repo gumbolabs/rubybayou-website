@@ -28,3 +28,11 @@ em { font-style: italic; }
   color: #333333;
   font-size: 0.8em;
 }
+
+#copyright {
+  font-size: 0.9em;
+}
+
+#copyright a {
+  color: #333333;
+}

@@ -11,27 +11,24 @@ html, body {
 }
 
 .container {
+  position: relative;
   width: 940px;
   margin: 0 auto;
   padding: 0 10px;
   padding: 0;
-  
   text-align: left;
 }
 
 #logo {
-  float: right;
-  position: relative;
+  position: absolute;
   top: 253px;
-  z-index: 100;
+  right: 0;
 }
 
 #facebook_badge {
-  float: right;
-  position: relative;
-  top: 300px;
-  right: 385px;
-  z-index: 100;
+  position: absolute;
+  top: 416px;
+  left: 0px;
 }
 
 .column {

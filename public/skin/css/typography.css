@@ -1,0 +1,30 @@
+h1 {
+  color: #52B647;
+  font-size: 1.5em;
+  padding: 1.0em 0 0.25em 0;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+p {
+  color: #333333;
+  font-size: 1.0em;
+  padding: 0.5em 0;
+}
+
+a { color: #666666; text-decoration: none; }
+strong { font-weight: bold; }
+em { font-style: italic; }
+
+#twitter ul {
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+#twitter ul li {
+  margin: 0.5em 0;
+}
+
+#twitter ul li {
+  color: #333333;
+  font-size: 0.8em;
+}

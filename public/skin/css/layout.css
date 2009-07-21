@@ -1,0 +1,58 @@
+html, body {
+  background-color: #269DEB;
+  text-align: center;
+}
+
+#content_area {
+  height: 400px;
+  /*overflow: hidden;*/
+  background-color: #FFFFFF;
+  padding-bottom: 8px;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+  padding: 0;
+  
+  text-align: left;
+}
+
+#logo {
+  float: right;
+  position: relative;
+  top: 253px;
+  z-index: 100;
+}
+
+#facebook_badge {
+  float: right;
+  position: relative;
+  top: 300px;
+  right: 385px;
+  z-index: 100;
+}
+
+.column {
+  float: left;
+  z-index: 0;
+}
+
+#latest_blog {
+  width: 280px;
+/*  margin-right: 20px;*/
+  margin-right: -20px;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+#twitter {
+  width: 220px;
+  margin-right: -220px;
+  margin-left: 120px;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  top: 0;
+}

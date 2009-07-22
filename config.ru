@@ -14,16 +14,9 @@
 # Do not set the adapter.handler in here, it will be ignored.
 # You can choose the adapter like `ramaze start -s mongrel` or set it in the
 # 'start.rb' and use `ruby start.rb` instead.
-if File.exists?('.production')
-  ENV['GEM_HOME'] = "/home/rubybayou/.gems"
-  ENV['GEM_PATH'] = "/home/rubybayou/.gems"
-end
-
 require ::File.expand_path('../app', __FILE__)
 
-if File.exists?('.production')
-  Ramaze.options.mode = :live
-end
+Ramaze.options.mode = :live
 
 Ramaze.start(:root => __DIR__, :started => true)
 run Ramaze

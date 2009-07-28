@@ -3,11 +3,11 @@ Feature: Twitter Cache
   I want to cache the RubyBayou Twitter feed
 
   Scenario: Twitter is alive
-    Given I am at the home page
-    When Twitter is alive
+    Given Twitter is alive
+    When I am go to the home page
     Then I should see the RubyBayou Twitter feed
   
   Scenario: Twitter is not alive
-    Given I am at the home page
-    When Twitter is not alive
+    Given Twitter is not alive
+    When I am go to the home page
     Then I should see the RubyBayou Twitter feed

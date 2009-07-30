@@ -4,10 +4,10 @@ Feature: Twitter Cache
 
   Scenario: Twitter is alive
     Given Twitter is alive
-    When I am go to the home page
-    Then I should see the RubyBayou Twitter feed
-  
+    When I go to the home page
+    Then I should see "Follow RubyBayou on Twitter"
+    
   Scenario: Twitter is not alive
     Given Twitter is not alive
-    When I am go to the home page
-    Then I should see the RubyBayou Twitter feed
+    When I go to the home page
+    Then I should not see "Follow RubyBayou on Twitter"

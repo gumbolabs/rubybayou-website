@@ -6,8 +6,13 @@ class TwitterCache
   property :date,         DateTime
   
   def self.update_cache
-    new_cache = self.get_twitter_feed()
-    self.store_cache(new_cache) unless new_cache.empty?
+    new_cache = TwitterCache.get_twitter_feed()
+    TwitterCache.store_cache(new_cache) unless new_cache.empty?
+  end
+  
+  def self.get_tweets
+    TwitterCache.update_cache
+    TwitterCache.all(:order => [:id.desc])
   end
   
   private

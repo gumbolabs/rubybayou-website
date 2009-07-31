@@ -28,4 +28,14 @@ describe TwitterCache do
     TwitterCache.first.should.respond_to? :date
     TwitterCache.first.date.should.not.be.nil?
   end
+  
+  should 'respond to get_tweets()' do
+    TwitterCache.should.respond_to? :get_tweets
+  end
+  
+  it 'get_tweets() should return tweets in descending order' do
+    @tweets = TwitterCache.get_tweets
+    @tweets[0].id.should.be > @tweets[1].id
+    @tweets[1].id.should.be > @tweets[2].id
+  end
 end

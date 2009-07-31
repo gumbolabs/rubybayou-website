@@ -9,6 +9,6 @@ desc 'Run Code Coverage with RCov'
 task :coverage do
   rm_f "coverage"
   rm_f "coverage.data"
-  rcov = "rcov --aggregate coverage.data --text-summary --exclude spec/.*"
+  rcov = "rcov --aggregate coverage.data --text-summary --exclude spec\/"
   system("#{rcov} spec/**/*.rb")
 end

@@ -7,9 +7,17 @@ Ramaze.options.roots = __DIR__('../../')
 describe MainController do
   behaves_like :rack_test
 
-  should 'show start page' do
+  it 'home page should respond successfully' do
     get('/').status.should == 200
-    last_response['Content-Type'].should == 'text/html'
-    # last_response.should =~ /<h1>Welcome to Ramaze!<\/h1>/
+  end
+  
+  it 'home page should include latest blog post' do
+    get ('/')
+    last_response.should.match /<div.*id=\"latest_blog\".*>.*<\/div>/m
+  end
+  
+  it 'home page should include Twitter feed' do
+    get ('/')
+    last_response.should.match /<div.*id=\"twitter\".*>.*<\/div>/m
   end
 end

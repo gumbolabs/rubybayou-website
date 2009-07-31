@@ -4,11 +4,17 @@
 # It will be required from either `config.ru` or `start.rb`
 
 require 'rubygems'
+gem 'ramaze',   '= 2009.07'
+gem 'twitter',  '= 0.6.13'
+gem 'dm-core', '= 0.9.11'
+
 require 'ramaze'
+require 'twitter'
+require 'dm-core'
 
 # Add the directory this file resides in to the load path, so you can run the
 # app from any other working directory
-$LOAD_PATH.unshift(__DIR__)
+$LOAD_PATH.unshift(File.dirname(__FILE__))
 
 # Initialize controllers and models
 require 'model/init'

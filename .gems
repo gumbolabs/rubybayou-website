@@ -1,1 +1,3 @@
-ramaze --version '= 2009.06.12'
+ramaze --version '= 2009.07'
+twitter --version '= 0.6.13'
+dm-core --version '= 0.9.11'

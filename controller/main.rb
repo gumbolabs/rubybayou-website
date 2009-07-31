@@ -1,6 +1,9 @@
 class MainController < Controller
   def index
     @title = "New Orleans Ruby User Group"
+    
+    TwitterCache.update_cache
+    @tweets = TwitterCache.all(:order => [:id.desc])
   end
 
   # the string returned at the end of the function is used as the html body

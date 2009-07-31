@@ -1,4 +1,8 @@
-# Here goes your database connection and options:
+# Setup default database configuration.
+DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite3://data.sqlite3')
 
-# Here go your requires for models:
-# require 'model/user'
+# Require each individual model.
+require 'model/twitter_cache'
+
+# Always make sure our database is up to date.
+DataMapper.auto_migrate!

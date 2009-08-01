@@ -6,7 +6,8 @@ task :spec do
 end
 
 Rcov::RcovTask.new do |t|
-  t.rcov_opts = ["--exclude","spec\/"]
+  t.libs = FileList['controller/**/*.rb', 'helper/**/*.rb', 'model/**/*.rb']
+  t.rcov_opts = ["--comments","--exclude","spec\/","--exclude","app\.rb","--exclude","start\.rb"]
   t.test_files = FileList['spec/**/*.rb']
   t.verbose = true
 end

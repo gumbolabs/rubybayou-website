@@ -1,4 +1,4 @@
 require 'ramaze/spec/bacon'
 
-require __DIR__('../app')
-Ramaze.options.roots = __DIR__('../')
+require File.expand_path(File.dirname(__FILE__) + '/../app')
+Ramaze.options.roots = File.expand_path(File.dirname(__FILE__) + '/..')

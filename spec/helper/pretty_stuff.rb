@@ -1,4 +1,4 @@
-require __DIR__('../common')
+require File.expand_path(File.dirname(__FILE__) + '/../common')
 
 describe Ramaze::Helper::PrettyStuff do
   should "respond to time_ago()" do

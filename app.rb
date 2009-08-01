@@ -12,9 +12,10 @@ require 'ramaze'
 require 'twitter'
 require 'dm-core'
 
+APP_ROOT = File.dirname(__FILE__)
 # Add the directory this file resides in to the load path, so you can run the
 # app from any other working directory
-$LOAD_PATH.unshift(File.dirname(__FILE__))
+$LOAD_PATH.unshift(APP_ROOT)
 
 # Initialize controllers and models
 require 'model/init'

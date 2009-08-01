@@ -1,4 +1,4 @@
-require __DIR__('../common')
+require File.expand_path(File.dirname(__FILE__) + '/../common')
 
 include Ramaze::Helper::PrettyStuff
 

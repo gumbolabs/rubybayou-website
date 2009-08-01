@@ -1,8 +1,4 @@
-require 'ramaze'
-require 'ramaze/spec/bacon'
-
-require __DIR__('../../app')
-Ramaze.options.roots = __DIR__('../../')
+require __DIR__('../common')
 
 require __DIR__('../../helper/pretty_stuff')
 include Ramaze::Helper::PrettyStuff

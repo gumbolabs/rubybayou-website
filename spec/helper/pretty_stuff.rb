@@ -1,8 +1,4 @@
-require 'ramaze'
-require 'ramaze/spec/bacon'
-
-require __DIR__('../../app')
-Ramaze.options.roots = __DIR__('../../')
+require __DIR__('../common')
 
 require __DIR__('../../helper/pretty_stuff')
 
@@ -12,20 +8,6 @@ describe Ramaze::Helper::PrettyStuff do
   end
   
   it "time_ago() should return friendly estimate of time since a given time" do
-    # when delta_minutes < 1
-    #   "less than a minute ago"
-    # when delta_minutes < 50
-    #   "#{delta_minutes} minutes ago"
-    # when delta_minutes < 90
-    #   "about one hour ago"
-    # when delta_minutes < 1080
-    #   "#{(delta_minutes / 60).round} hours ago"
-    # when delta_minutes < 1440
-    #   "one day ago"
-    # when delta_minutes < 2880
-    #   "about one day ago"
-    # else
-    #   "#{(delta_minutes / 1440).round} days ago"
     past_time = Time.new
     
     guidelines = {

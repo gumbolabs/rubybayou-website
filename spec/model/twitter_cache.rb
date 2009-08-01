@@ -1,8 +1,4 @@
-require 'ramaze'
-require 'ramaze/spec/bacon'
-
-require __DIR__('../../app')
-Ramaze.options.roots = __DIR__('../../')
+require __DIR__('../common')
 
 describe TwitterCache do
   should 'respond to time()' do

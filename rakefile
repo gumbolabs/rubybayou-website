@@ -1,14 +1,12 @@
-require 'cucumber/rake/task'
+require 'rcov/rcovtask'
 
 desc "Run Specs with Bacon"
 task :spec do
   sh "bacon spec/**/*.rb --quiet"
 end
 
-desc 'Run Code Coverage with RCov'
-task :coverage do
-  rm_f "coverage"
-  rm_f "coverage.data"
-  rcov = "rcov --aggregate coverage.data --text-summary --exclude spec\/"
-  system("#{rcov} spec/**/*.rb")
+Rcov::RcovTask.new do |t|
+  t.rcov_opts = ["--exclude","spec\/"]
+  t.test_files = FileList['spec/**/*.rb']
+  t.verbose = true
 end

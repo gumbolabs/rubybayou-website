@@ -1,4 +1,3 @@
-require 'ramaze'
 require 'ramaze/spec/bacon'
 
 require __DIR__('../app')

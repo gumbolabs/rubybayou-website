@@ -1,6 +1,5 @@
 require __DIR__('../common')
 
-require __DIR__('../../helper/pretty_stuff')
 include Ramaze::Helper::PrettyStuff
 
 describe MainController do

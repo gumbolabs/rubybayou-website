@@ -1,7 +1,5 @@
 require __DIR__('../common')
 
-require __DIR__('../../helper/pretty_stuff')
-
 describe Ramaze::Helper::PrettyStuff do
   should "respond to time_ago()" do
     Ramaze::Helper::PrettyStuff.should.respond_to? :time_ago

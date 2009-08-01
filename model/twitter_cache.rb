@@ -1,9 +1,8 @@
 class TwitterCache
   include DataMapper::Resource
   
-  property :id,           Serial
   property :text,         Text
-  property :date,         DateTime
+  property :date,         DateTime, :key => true
   
   def time
     self.date.to_time
@@ -16,7 +15,7 @@ class TwitterCache
   
   def self.get_tweets
     TwitterCache.update_cache
-    TwitterCache.all(:order => [:id.desc])
+    TwitterCache.all(:order => [:date.desc])
   end
   
   private
@@ -37,7 +36,6 @@ class TwitterCache
 
       cache.each do |tweet|
         attributes = {
-          :id => tweet.id,
           :text => tweet.text,
           :date => tweet.created_at
         }

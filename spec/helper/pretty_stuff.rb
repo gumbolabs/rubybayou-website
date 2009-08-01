@@ -19,6 +19,7 @@ describe Ramaze::Helper::PrettyStuff do
     }
 
     guidelines.each do |estimate, time|
+      Ramaze::Helper::PrettyStuff.time_ago(time).should.be.kind_of? String
       Ramaze::Helper::PrettyStuff.time_ago(time).should.eql? estimate
     end
   end

@@ -3,8 +3,6 @@ module Ramaze
     module PrettyStuff
       def time_ago(time)
         start_date = Time.new
-        date_format = :default
-        
         delta_minutes = (start_date.to_i - time.to_i).floor / 60
         
         case

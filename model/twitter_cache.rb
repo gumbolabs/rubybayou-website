@@ -5,6 +5,10 @@ class TwitterCache
   property :text,         Text
   property :date,         DateTime
   
+  def time
+    self.date.to_time
+  end
+  
   def self.update_cache
     new_cache = TwitterCache.get_twitter_feed()
     TwitterCache.store_cache(new_cache) unless new_cache.empty?

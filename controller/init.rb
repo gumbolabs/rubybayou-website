@@ -3,7 +3,7 @@
 
 class Controller < Ramaze::Controller
   layout :default
-  helper :xhtml
+  helper :xhtml, :pretty_stuff
   engine :Etanni
 end
 

@@ -5,11 +5,19 @@ require __DIR__('../../app')
 Ramaze.options.roots = __DIR__('../../')
 
 describe TwitterCache do
-  should 'respond to update_cache()' do
+  should 'respond to time()' do
+    TwitterCache.first.should.respond_to? :time
+  end
+  
+  it "time() should return a Time object" do
+    TwitterCache.first.time.should.be.kind_of? Time
+  end
+  
+  should 'respond to self.update_cache()' do
     TwitterCache.should.respond_to? :update_cache
   end
   
-  should 'have exactly three records after an update_cache()' do
+  should 'have exactly three records after an self.update_cache()' do
     TwitterCache.update_cache
     TwitterCache.all.size.should.eql? 3
   end
@@ -29,11 +37,11 @@ describe TwitterCache do
     TwitterCache.first.date.should.not.be.nil?
   end
   
-  should 'respond to get_tweets()' do
+  should 'respond to self.get_tweets()' do
     TwitterCache.should.respond_to? :get_tweets
   end
   
-  it 'get_tweets() should return tweets in descending order' do
+  it 'self.get_tweets() should return tweets in descending order' do
     @tweets = TwitterCache.get_tweets
     @tweets[0].id.should.be > @tweets[1].id
     @tweets[1].id.should.be > @tweets[2].id

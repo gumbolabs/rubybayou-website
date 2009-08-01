@@ -20,7 +20,18 @@ describe MainController do
     last_response.should.match /<div.*id=\"twitter\".*>.*<\/div>/m
   end
   
-  it "home page Twitter feed should include how old the tweets are" do
+  it 'home page Twitter feed should include exactly 3 items' do
+    get ('/')
+    @tweets = TwitterCache.get_tweets
+    @tweets.size.should.eql? 3
+    
+    @tweets.each do |tweet|
+      last_response.should.match /<li>#{Regexp.quote(tweet.text)}/m
+    end
+  end
+  
+  it 'home page Twitter feed should include how old the tweets are' do
+    get ('/')
     @tweets = TwitterCache.get_tweets
     @tweets.each do |tweet|
       last_response.should.match /<li>#{Regexp.quote(tweet.text)} <small>\(#{time_ago(tweet.time)}\)<\/small><\/li>/m

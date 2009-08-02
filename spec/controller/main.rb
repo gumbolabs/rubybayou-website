@@ -26,7 +26,7 @@ describe MainController do
       get ('/')
       @tweets = TwitterCache.get_tweets
       @tweets.each do |tweet|
-        last_response.should.match /<li>#{Regexp.quote(tweet.text)} <small>\(#{time_ago(tweet.time)}\)<\/small><\/li>/m
+        last_response.should.match /<li>#{linkify_twitter_text(Regexp.quote(tweet.text))} <small>\(#{time_ago(tweet.time)}\)<\/small><\/li>/m
       end
     end
   end

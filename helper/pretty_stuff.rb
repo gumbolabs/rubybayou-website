@@ -18,13 +18,20 @@ module Ramaze
       
       def linkify_twitter_text(text)
         text = linkify_twitter_users(text)
+        text = linkify_twitter_links(text)
       end
       
       private
       
       def linkify_twitter_users(text)
-        text.gsub(/\s@(.*)\s*/) do |s|
-          " @<a href=\"http://twitter.com/#{$1}\">#{$1}</a>"
+        text.gsub(/(\s)@(.*)(\s?)/) do |s|
+          "#{$1}@<a href=\"http://twitter.com/#{$2}\">#{$2}</a>#{$3}"
+        end
+      end
+      
+      def linkify_twitter_links(text)
+        text.gsub(/(\s)(https?:\/\/.*)(\s?)/) do |s|
+          "#{$1}<a href=\"#{$2}\">#{$2}</a>#{$3}"
         end
       end
     end

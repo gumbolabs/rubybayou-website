@@ -33,18 +33,26 @@ describe Ramaze::Helper::PrettyStuff do
     
     should "convert @usernames to appropriate links" do
       text = "Example @username"
-      expected = /Example @<a href=\"http:\/\/twitter\.com\/username\">username<\/a>/
+      expected = /Example @<a href="http:\/\/twitter\.com\/username">username<\/a>/
       
       result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
       result.should.match expected
     end
     
     should "convert http:// links to appropriate links" do
-      should.flunk "pending"
+      text ="Example http://rubybayou.com"
+      expected = /Example <a href="http:\/\/rubybayou\.com">http:\/\/rubybayou\.com<\/a>/
+
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
     end
     
     should "convert https:// links to appropriate links" do
-      should.flunk "pending"
+      text ="Example https://rubybayou.com"
+      expected = /Example <a href="https:\/\/rubybayou\.com">https:\/\/rubybayou\.com<\/a>/
+
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
     end
     
     should "convert #hashtags to appropriate links" do

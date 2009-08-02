@@ -3,9 +3,11 @@ require File.expand_path(File.dirname(__FILE__) + '/../common')
 include Ramaze::Helper::PrettyStuff
 
 describe MainController do
-  describe "home page" do
+  before do
     behaves_like :rack_test
-    
+  end
+  
+  describe "home page" do
     should "respond successfully" do
       get('/').status.should == 200
     end

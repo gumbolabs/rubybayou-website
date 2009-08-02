@@ -34,7 +34,31 @@ describe Ramaze::Helper::PrettyStuff do
     should "convert @usernames to appropriate links" do
       text = "Example @username"
       expected = /Example <a href="http:\/\/twitter\.com\/username">@username<\/a>/
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
       
+      text = "Example:@username"
+      expected = /Example:<a href="http:\/\/twitter\.com\/username">@username<\/a>/
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
+      
+      text = "@username: Example"
+      expected = /<a href="http:\/\/twitter\.com\/username">@username<\/a>: Example/
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
+      
+      text = "Example (@username)"
+      expected = /Example \(<a href="http:\/\/twitter\.com\/username">@username<\/a>\)/
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
+      
+      text = "Example [@username]"
+      expected = /Example \[<a href="http:\/\/twitter\.com\/username">@username<\/a>\]/
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
+      
+      text = "Example {@username}"
+      expected = /Example \{<a href="http:\/\/twitter\.com\/username">@username<\/a>\}/
       result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
       result.should.match expected
     end
@@ -84,7 +108,31 @@ describe Ramaze::Helper::PrettyStuff do
     should "convert #hashtags to appropriate links" do
       text = "Example #hashtag"
       expected = /Example <a href="http:\/\/twitter.com\/search\?q=#hashtag">#hashtag<\/a>/
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
       
+      text = "Example:#hashtag"
+      expected = /Example:<a href="http:\/\/twitter.com\/search\?q=#hashtag">#hashtag<\/a>/
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
+      
+      text = "#hashtag: Example"
+      expected = /<a href="http:\/\/twitter.com\/search\?q=#hashtag">#hashtag<\/a>: Example/
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
+      
+      text = "Example (#hashtag)"
+      expected = /Example \(<a href="http:\/\/twitter.com\/search\?q=#hashtag">#hashtag<\/a>\)/
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
+      
+      text = "Example [#hashtag]"
+      expected = /Example \[<a href="http:\/\/twitter.com\/search\?q=#hashtag">#hashtag<\/a>\]/
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
+      
+      text = "Example {#hashtag}"
+      expected = /Example \{<a href="http:\/\/twitter.com\/search\?q=#hashtag">#hashtag<\/a>\}/
       result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
       result.should.match expected
     end

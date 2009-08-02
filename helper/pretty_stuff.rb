@@ -19,6 +19,7 @@ module Ramaze
       def linkify_twitter_text(text)
         text = linkify_twitter_users(text)
         text = linkify_twitter_links(text)
+        text = linkify_twitter_hashtags(text)
       end
       
       private
@@ -32,6 +33,12 @@ module Ramaze
       def linkify_twitter_links(text)
         text.gsub(/(\s)(https?:\/\/.*)(\s?)/) do |s|
           "#{$1}<a href=\"#{$2}\">#{$2}</a>#{$3}"
+        end
+      end
+      
+      def linkify_twitter_hashtags(text)
+        text.gsub(/(\s)#(.*)(\s?)/) do |s|
+          "#{$1}#<a href=\"http:\/\/twitter.com\/search?q=%23#{$2}\">#{$2}</a>#{$3}"
         end
       end
     end

@@ -15,6 +15,18 @@ module Ramaze
           else "#{(delta_minutes / 1440).round} days ago"
         end
       end
+      
+      def linkify_twitter_text(text)
+        text = linkify_twitter_users(text)
+      end
+      
+      private
+      
+      def linkify_twitter_users(text)
+        text.gsub(/\s@(.*)\s*/) do |s|
+          " @<a href=\"http://twitter.com/#{$1}\">#{$1}</a>"
+        end
+      end
     end
   end
 end

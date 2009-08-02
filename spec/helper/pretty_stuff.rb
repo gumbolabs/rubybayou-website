@@ -25,4 +25,30 @@ describe Ramaze::Helper::PrettyStuff do
       end
     end
   end
+  
+  describe "linkify_twitter_text()" do
+    should "respond" do
+      Ramaze::Helper::PrettyStuff.should.respond_to? :linkify_twitter_text
+    end
+    
+    should "convert @usernames to appropriate links" do
+      text = "Example @username"
+      expected = /Example @<a href=\"http:\/\/twitter\.com\/username\">username<\/a>/
+      
+      result = Ramaze::Helper::PrettyStuff.linkify_twitter_text(text)
+      result.should.match expected
+    end
+    
+    should "convert http:// links to appropriate links" do
+      should.flunk "pending"
+    end
+    
+    should "convert https:// links to appropriate links" do
+      should.flunk "pending"
+    end
+    
+    should "convert #hashtags to appropriate links" do
+      should.flunk "pending"
+    end
+  end
 end

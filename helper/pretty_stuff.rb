@@ -25,20 +25,20 @@ module Ramaze
       private
       
       def linkify_twitter_users(text)
-        text.gsub(/(^|[\s\(\[\{:-;])@([a-zA-Z0-9_-]*)([\s\)\]\}:-;]|$)/) do |s|
-          "#{$1}@<a href=\"http://twitter.com/#{$2}\">#{$2}</a>#{$3}"
+        text.gsub(/(\A|[\s\(\[\{:;\-,\.])@([\w\-]*)([\s\)\]\}:;,\.]|\Z)/) do |s|
+          "#{$1}<a href=\"http://twitter.com/#{$2}\">@#{$2}</a>#{$3}"
         end
       end
       
       def linkify_twitter_links(text)
-        text.gsub(/(^|[\s\(\[\{:-;])(https?:\/\/[\w\d\:\#\@\%\/;$()~_?\+-=\\\.&]*)([\s\)\]\}:-;]|$)/) do |s|
+        text.gsub(/(\A|[\s\(\[\{:;\-,\.])(https?:\/\/[\w\d\:\#\@\%\/;$~?\+-=\\\.&]*)([\s\)\]\}]|\Z)/) do |s|
           "#{$1}<a href=\"#{$2}\">#{$2}</a>#{$3}"
         end
       end
       
       def linkify_twitter_hashtags(text)
-        text.gsub(/(^|[\s\(\[\{:-;])#([a-zA-Z0-9_-]*)([\s\)\]\}:-;]|$)/) do |s|
-          "#{$1}#<a href=\"http:\/\/twitter.com\/search?q=##{$2}\">#{$2}</a>#{$3}"
+        text.gsub(/(\A|[\s\(\[\{:;\-,\.])#([\w\-]*)([\s\)\]\}:;,\.]|\Z)/) do |s|
+          "#{$1}<a href=\"http:\/\/twitter.com\/search?q=##{$2}\">##{$2}</a>#{$3}"
         end
       end
     end

@@ -2,9 +2,12 @@ module Ramaze
   module Helper
     module PrettyStuff
       def time_ago(time)
+        start = Time.new
+        
         time.gmtime
-        start_date = Time.new.gmtime
-        delta_minutes = (start_date.to_i - time.to_i).floor / 60
+        start.gmtime
+        
+        delta_minutes = (start.to_i - time.to_i).floor / 60
         
         case delta_minutes
           when 0..1 then "less than a minute ago"

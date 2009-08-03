@@ -16,7 +16,7 @@
 # 'start.rb' and use `ruby start.rb` instead.
 require ::File.expand_path('../app', __FILE__)
 
-Ramaze.options.mode = :live
+Ramaze.options.mode = :dev
 
 Ramaze.start(:root => __DIR__, :started => true)
 run Ramaze

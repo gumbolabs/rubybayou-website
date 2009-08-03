@@ -3,10 +3,10 @@ begin
 
   Rcov::RcovTask.new do |t|
     t.test_files = FileList['spec/**/*.rb']
-    t.libs = FileList['controller/**/*.rb',
-                      'helper/**/*.rb',
-                      'model/**/*.rb',
-                      'spec/**/*.rb']
+    # t.libs = FileList['controller/**/*.rb',
+    #                   'helper/**/*.rb',
+    #                   'model/**/*.rb',
+    #                   'spec/**/*.rb']
     t.verbose = true
     
     t.rcov_opts << "--comments"

@@ -13,12 +13,12 @@ describe MainController do
     end
   
     should "include latest blog post" do
-      get ('/')
+      get('/')
       last_response.should.match /<div.*id=\"latest_blog\".*>.*<\/div>/m
     end
   
     should "include Twitter feed" do
-      get ('/')
+      get('/')
       last_response.should.match /<div.*id=\"twitter\".*>.*<\/div>/m
     end
   end

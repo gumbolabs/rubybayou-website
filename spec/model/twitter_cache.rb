@@ -7,19 +7,15 @@ describe TwitterCache do
     TwitterCache.first.text.should.be.kind_of? String
   end
   
-  should 'store the date of tweets' do
-    TwitterCache.first.should.respond_to? :date
-    TwitterCache.first.date.should.not.be.nil?
-    TwitterCache.first.date.should.be.kind_of? DateTime
+  should 'store the time of tweets' do
+    TwitterCache.first.should.respond_to? :time
+    TwitterCache.first.time.should.not.be.nil?
+    TwitterCache.first.time.should.be.kind_of? Time
   end
   
-  describe "time()" do
+  describe "time_ago()" do
     should "respond" do
-      TwitterCache.first.should.respond_to? :time
-    end
-  
-    should "return a Time object" do
-      TwitterCache.first.time.should.be.kind_of? Time
+      TwitterCache.first.should.respond_to? :time_ago
     end
   end
   
@@ -49,8 +45,8 @@ describe TwitterCache do
   
     should "return tweets in descending order" do
       @tweets = TwitterCache.get_tweets
-      @tweets[0].date.should.be > @tweets[1].date
-      @tweets[1].date.should.be > @tweets[2].date
+      @tweets[0].time.should.be > @tweets[1].time
+      @tweets[1].time.should.be > @tweets[2].time
     end
   end
 end

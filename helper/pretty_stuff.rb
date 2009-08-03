@@ -4,8 +4,8 @@ module Ramaze
       def time_ago(time)
         start = Time.new
         
-        time.gmtime
-        start.gmtime
+        time.gmtime unless time.gmt?
+        start.gmtime unless start.gmt?
         
         delta_minutes = (start.to_i - time.to_i).floor / 60
         

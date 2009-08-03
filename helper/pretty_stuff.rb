@@ -2,7 +2,8 @@ module Ramaze
   module Helper
     module PrettyStuff
       def time_ago(time)
-        start_date = Time.new
+        time.gmtime
+        start_date = Time.new.gmtime
         delta_minutes = (start_date.to_i - time.to_i).floor / 60
         
         case delta_minutes

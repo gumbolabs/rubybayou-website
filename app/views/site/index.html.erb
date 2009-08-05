@@ -7,7 +7,7 @@
   <h1>Twitter</h1>
   <ul>
   <% @tweets.each do |tweet| %>
-    <li><%= linkify_twitter_text(tweet.text) %> <small>(<%= tweet.time_ago %>)</small></li>
+    <li><%= linkify_twitter_text(tweet.text) %> <small>(<%= time_ago_in_words(tweet.datetime) %>)</small></li>
   <% end %>
   </ul>
   <a href="http://twitter.com/RubyBayou" id="twitter-link" style="display:block;text-align:right;">Keep up on Twitter</a>

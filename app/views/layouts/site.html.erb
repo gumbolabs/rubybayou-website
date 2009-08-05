@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Ruby Bayou: <%= @page_title %></title>
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Ruby Bayou is the Ruby user group serving the New Orleans metro area." />
+    <meta name="keywords" content="ruby, programming, New Orleans, Louisiana, user group" />
+    <meta name="author" content="James Thompson" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <style type="text/css" media="all">
+      @import url('/skin/css/reset.css');
+      @import url('/skin/css/fonts.css');    
+      @import url('/skin/css/layout.css');
+      @import url('/skin/css/typography.css');
+    </style>
+  </head>
+  <body>
+    <div id="content_area">
+      <div class="container">
+        <%= yield %>
+      </div>
+      <div id="footer" class="container">
+        <img id="logo" src="/skin/img/logo.jpg" alt="Ruby Bayou: New Orleans Ruby User Group" title="Ruby Bayou: New Orleans Ruby User Group" />
+        <a href="http://www.facebook.com/group.php?gid=103328088847" id="facebook_badge"><img src="/skin/img/find_us_on_facebook_badge.gif" alt="Find Us on Facebook" title="Find Us on Facebook" /></a>
+        <div id="copyright">
+          <a rel="license" href="http://creativecommons.org/licenses/by/3.0/us/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/us/80x15.png" /></a><br />The <span xmlns:dc="http://purl.org/dc/elements/1.1/" property="dc:title">Ruby Bayou Web Site</span> and all its content, by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.rubybayou.com/" property="cc:attributionName" rel="cc:attributionURL">various contributers</a>, are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 United States License</a>.<br />
+          <br />
+          Additionally, all source code related to this site is available at <a href="http://github.com/rubybayou/website/">Github</a> and is made available under the terms of the <a rel="license" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>. This same license also applies to all code examples listed on the site.
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-87343-22");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+  </body>
+</html>

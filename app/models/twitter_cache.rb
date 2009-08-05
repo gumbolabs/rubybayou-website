@@ -1,7 +1,9 @@
 class TwitterCache < ActiveRecord::Base
   def self.update_cache
-    new_cache = TwitterCache.get_twitter_feed()
-    TwitterCache.store_cache(new_cache) unless new_cache.empty?
+    if self.cache_stale?
+      new_cache = TwitterCache.get_twitter_feed()
+      TwitterCache.store_cache(new_cache) unless new_cache.empty?
+    end
   end
   
   def self.get_tweets
@@ -10,6 +12,14 @@ class TwitterCache < ActiveRecord::Base
   end
   
   private
+  
+  def self.cache_stale?
+    tweet = TwitterCache.first
+    
+    unless tweet.datetime < (DateTime.now - 3600)
+      tweet.text != Twitter::Search.new.from('RubyBayou').per_page(1).fetch().results[0].text
+    end
+  end
   
   def self.get_twitter_feed
     feed = []

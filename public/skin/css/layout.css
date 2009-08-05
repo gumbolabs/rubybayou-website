@@ -1,0 +1,66 @@
+html, body {
+  background-color: #269DEB;
+  text-align: center;
+}
+
+#content_area {
+  height: 400px;
+  background-color: #FFFFFF;
+  padding-bottom: 8px;
+}
+
+#footer {
+  
+}
+
+.container {
+  position: relative;
+  width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+  padding: 0;
+  text-align: left;
+}
+
+#logo {
+  width: 410px;
+  height: 195px;
+  position: absolute;
+  top: 253px;
+  right: 0;
+}
+
+#facebook_badge {
+  position: absolute;
+  top: 416px;
+  left: 0px;
+}
+
+#copyright {
+  width: 410px;
+  position: absolute;
+  top: 450px;
+  right: 0px;
+}
+
+.column {
+  float: left;
+  z-index: 0;
+}
+
+#latest_blog {
+  width: 280px;
+  margin-right: -280px;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+#twitter {
+  width: 220px;
+  margin-right: -220px;
+  margin-left: 340px;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  top: 0;
+}

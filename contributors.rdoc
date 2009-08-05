@@ -1,0 +1,7 @@
+= Contributors
+
+Since it is impractical to maintain a list of all contributors in the license
+file itself all contributors are asked to add their names and contact any
+public email address they wish to provide to this file.
+
+* James Thompson <james@plainprograms.com>

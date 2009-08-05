@@ -1,0 +1,2 @@
+rails --version '= 2.3.3'
+twitter --version '= 0.6.13'

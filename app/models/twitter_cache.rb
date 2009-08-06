@@ -16,6 +16,8 @@ class TwitterCache < ActiveRecord::Base
   def self.cache_stale?
     tweet = TwitterCache.first
     
+    return true if tweet.nil?
+    
     unless tweet.datetime < (DateTime.now - 3600)
       tweet.text != Twitter::Search.new.from('RubyBayou').per_page(1).fetch().results[0].text
     end

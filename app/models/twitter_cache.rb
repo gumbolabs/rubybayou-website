@@ -1,12 +1,12 @@
 class TwitterCache < ActiveRecord::Base
   def self.update_cache
-    new_cache = TwitterCache.get_twitter_feed()
-    TwitterCache.store_cache(new_cache) unless new_cache.empty?
+    new_cache = self.get_twitter_feed()
+    self.store_cache(new_cache) unless new_cache.empty?
   end
   
   def self.get_tweets
-    TwitterCache.update_cache
-    TwitterCache.all(:order => 'datetime DESC')
+    self.update_cache
+    self.all(:order => 'datetime DESC')
   end
   
   private
@@ -23,7 +23,7 @@ class TwitterCache < ActiveRecord::Base
   
   def self.store_cache(cache)
     ActiveRecord::Base.transaction do
-      TwitterCache.destroy_all
+      self.destroy_all
 
       cache.each do |tweet|
         attributes = {
@@ -31,7 +31,7 @@ class TwitterCache < ActiveRecord::Base
           :datetime => DateTime.parse(tweet.created_at)
         }
         
-        cached_tweet = TwitterCache.new(attributes)
+        cached_tweet = self.new(attributes)
         cached_tweet.save
       end
     end

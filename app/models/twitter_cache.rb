@@ -22,7 +22,7 @@ class TwitterCache < ActiveRecord::Base
   end
   
   def self.store_cache(cache)
-    ActiveRecord::Base.transaction do |txn|
+    ActiveRecord::Base.transaction do
       TwitterCache.destroy_all
 
       cache.each do |tweet|

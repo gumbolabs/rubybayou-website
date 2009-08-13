@@ -5,7 +5,7 @@ class TwitterCache < ActiveRecord::Base
   end
   
   def self.get_tweets
-    self.update_cache
+    self.update_cache if (self.first.nil? || (self.first.updated_on < DateTime.now.utc.ago(3600)))
     self.all(:order => 'datetime DESC')
   end
   
@@ -27,6 +27,7 @@ class TwitterCache < ActiveRecord::Base
 
       cache.each do |tweet|
         attributes = {
+          :id => tweet.id,
           :text => tweet.text,
           :datetime => DateTime.parse(tweet.created_at)
         }

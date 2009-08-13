@@ -64,3 +64,41 @@ html, body {
   padding-bottom: 0.5em;
   top: 0;
 }
+
+#meeting {
+  width: 280px;
+  margin-right: -220px;
+  margin-left: 280px;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  top: 0;
+}
+
+#meeting #calendar-tile {
+	width: 100px;
+	float: left;
+	margin-top: 0.5em;
+	margin-right: 0.5em;
+	margin-bottom: 0.5em;
+	border: 2px solid #990000;
+	text-align: center;
+}
+
+#calendar-tile #month {
+	color: #ffffff;
+	background-color: #990000;
+	padding: 0.1em;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+#calendar-tile span {
+	font-size: 3em;
+	font-weight: bold;
+}
+
+#calendar-tile #time {
+  color: #ffffff;
+  background-color: #990000;
+  padding: 0.1em;
+}

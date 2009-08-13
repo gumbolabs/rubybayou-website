@@ -29,6 +29,18 @@ em { font-style: italic; }
   font-size: 0.8em;
 }
 
+#meeting h2 {
+	margin-top: 0.2em;
+	margin-bottom: 0.5em;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-align: center;
+}
+
+#meeting p {
+	font-size: 0.9em;
+}
+
 #copyright {
   font-size: 0.9em;
 }

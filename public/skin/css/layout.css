@@ -36,6 +36,24 @@ html, body {
   left: 0px;
 }
 
+#sponsors {
+  position: absolute;
+  top: 416px;
+  left: 200px;
+}
+
+#sponsors ul {
+  margin-left: 1em;
+}
+
+#sponsors li {
+  margin-bottom: 0.3em;
+}
+
+#sponsors a {
+  color: #eeeeee;
+}
+
 #copyright {
   width: 410px;
   position: absolute;

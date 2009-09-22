@@ -6,20 +6,20 @@ describe TwitterCache do
   end
   
   it "should store the text of tweets" do
-    TwitterCache.first.should respond_to :text
+    TwitterCache.first.should respond_to(:text)
     TwitterCache.first.text.should_not be_nil
-    TwitterCache.first.text.should be_a_kind_of String
+    TwitterCache.first.text.should be_a_kind_of(String)
   end
   
   it "should store the time of tweets as datetime" do
-    TwitterCache.first.should respond_to :datetime
+    TwitterCache.first.should respond_to(:datetime)
     TwitterCache.first.datetime.should_not be_nil
     # TwitterCache.first.datetime.should be_a_kind_of DateTime
   end
   
   describe "self.update_cache()" do
     it "should respond" do
-      TwitterCache.should respond_to :update_cache
+      TwitterCache.should respond_to(:update_cache)
     end
   
     it "should have exactly three records after call" do
@@ -30,11 +30,11 @@ describe TwitterCache do
   
   describe "self.get_tweets()" do
     it "should respond" do
-      TwitterCache.should respond_to :get_tweets
+      TwitterCache.should respond_to(:get_tweets)
     end
   
     it "should return an array of tweets" do
-      TwitterCache.get_tweets.should be_an_instance_of Array
+      TwitterCache.get_tweets.should be_an_instance_of(Array)
     end
   
     it "should return exactly 3 tweets" do

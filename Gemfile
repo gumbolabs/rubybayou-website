@@ -7,6 +7,7 @@ gem 'rails', '3.0.0.beta2'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'twitter', '~> 0.6'
+gem 'pg'
 
 # Use unicorn as the web server
 # gem 'unicorn'

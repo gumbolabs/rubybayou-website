@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.beta2'
+gem 'rails', '3.0.0.beta4'
 
 gem 'twitter', '~> 0.6'
 gem 'pg'

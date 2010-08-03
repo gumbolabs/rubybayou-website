@@ -1,9 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.beta4'
+gem 'rails', '3.0.0.rc'
 
 gem 'twitter', '~> 0.6'
-gem 'pg'
+
+group :development do
+  gem 'pg'
+end
 
 group :test do
   gem 'cucumber'

@@ -4,7 +4,7 @@ gem 'rails', '3.0.0.rc'
 
 gem 'twitter', '~> 0.6'
 
-group :development do
+group :production do
   gem 'pg'
 end
 

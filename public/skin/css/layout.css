@@ -4,13 +4,13 @@ html, body {
 }
 
 #content_area {
-  height: 400px;
+  height: 450px;
   background-color: #FFFFFF;
   padding-bottom: 8px;
 }
 
 #footer {
-  
+
 }
 
 .container {
@@ -26,19 +26,19 @@ html, body {
   width: 410px;
   height: 195px;
   position: absolute;
-  top: 253px;
+  top: 303px;
   right: 0;
 }
 
 #facebook_badge {
   position: absolute;
-  top: 416px;
+  top: 466px;
   left: 0px;
 }
 
 #sponsors {
   position: absolute;
-  top: 416px;
+  top: 466px;
   left: 200px;
 }
 
@@ -57,7 +57,7 @@ html, body {
 #copyright {
   width: 410px;
   position: absolute;
-  top: 450px;
+  top: 500px;
   right: 0px;
 }
 

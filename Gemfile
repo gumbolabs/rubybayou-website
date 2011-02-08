@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.rc'
-
+gem 'sqlite3'
 gem 'twitter', '~> 0.6'
 
 group :production do

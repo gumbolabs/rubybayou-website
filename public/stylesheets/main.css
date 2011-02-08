@@ -1,0 +1,174 @@
+#main {
+	background:url(../images/main_background.png) repeat-y;
+}
+
+#main #inside {
+	width:802px;
+	margin:0 auto;
+}
+
+
+#main h2 {
+	font-family:'LeagueGothicRegular';
+	font-size:26px;
+	margin-top:10px;
+	margin-bottom:15px;
+	font-weight:normal;
+	text-transform:uppercase;
+	color:#822a05;
+}
+
+#main #logo {
+	padding:50px 0;
+}
+
+#main #logo h1 {
+	text-indent:-9999px;
+	background:url(../images/logo.png);
+	width:414px;
+	height:130px;
+	margin:0 auto;
+}
+
+#main #details {
+	background:url(../images/white_background.png);
+	height:215px;
+	padding:10px 0;
+	border-top:1px solid #d8d8d8;
+	border-bottom:1px solid #d8d8d8;
+}
+
+#main #details ul li {
+	width:237px;
+	padding:0 15px;
+	float:left;
+}
+
+#main #details ul li#when #ribbon {
+	background:url(../images/ribbon.png) no-repeat;
+	width:211px;
+	margin-bottom:8px;
+	position:relative;
+	line-height:35px;
+	padding:0 28px;
+	left:-28px;
+	font-size:14px;
+	letter-spacing:-1px;
+	height:47px;
+	color:#fff;
+	font-weight:bold;
+	text-shadow:1px 1px 1px #6b6b6b;  
+}
+
+#main #details ul li#when #ribbon #time {
+	font-family:'Georgia';
+	font-style:italic;
+	font-weight:normal;
+}
+
+#main #details ul li p {
+	line-height:20px;
+}
+
+#main #planning {
+	margin:10px 0 25px 0;
+}
+
+#main #planning h3 {
+	background:url(../images/member_text.png) no-repeat;
+	width:169px;
+	height:24px;
+	text-indent:-9999px;
+	margin:0 auto 15px auto;
+} 
+
+#main #planning ul {
+	margin:0 auto;
+	text-align:center;
+}
+
+#main #planning ul li {
+	display:inline-block;
+	padding:0 10px;
+}
+
+#main #planning ul li img {
+	border:5px solid #d8d7d1;
+}
+
+#main #twitter {
+	background:#dddddd;
+	padding:12px 0;
+	font-family:'Georgia';
+	font-style:italic;
+	text-align:center;
+	font-size:12px;
+	color:#626060;
+}
+
+
+#main #projects h2 {
+	padding:10px 18px;
+	margin-bottom:0px;
+	
+}
+
+#main #projects ul li {
+	display:inline-block;
+	padding:10px 18px;
+	width:361px;
+	line-height:20px;
+}
+
+
+#main #projects ul li .info {
+	margin-bottom:5px;
+}
+
+#main #projects ul li a.title {
+	font-size:15px;
+	font-weight:bold;
+}
+
+#main #projects ul li span.author {
+	font-size:11px;
+	font-family:'Georgia';
+	font-style:italic;
+}
+
+#main #footer {
+	background:#053648;
+	border-top:4px solid #9bafb6;
+	color:#fff;
+	font-size:10px;
+	padding:10px 0;
+}
+
+#main #footer #share,
+#main #footer #license,
+#main #footer #source {
+	width:242px;
+	padding:10px;
+}
+
+#main #footer #share ul {
+	padding:0 10px;
+}
+
+#main #footer #share ul li {
+	float:left;
+	padding:0 5px;
+}
+
+#main #footer #share ul li a {
+	display:block;
+	text-indent:-9999px;
+	width:32px;
+	height:31px;
+}
+
+#main #footer #share ul li.github a { background:url(../images/github_logo.png) no-repeat; }
+#main #footer #share ul li.facebook a { background:url(../images/facebook_logo.png) no-repeat; }
+#main #footer #share ul li.twitter a { background:url(../images/twitter_logo.png) no-repeat; }
+#main #footer #share ul li.google a { background:url(../images/google_logo.png) no-repeat; }
+#main #footer #share ul li.meetup a { background:url(../images/meetup_logo.png) no-repeat; }

@@ -1,7 +1,6 @@
-source 'http://rubygems.org'
+source :rubygems
 
 gem 'rails', '~> 3.0.3'
-
 gem 'twitter', '~> 0.6'
 
 group :production do

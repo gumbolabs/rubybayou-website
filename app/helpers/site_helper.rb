@@ -24,4 +24,9 @@ module SiteHelper
       "#{$1}<a href=\"http:\/\/twitter.com\/search?q=##{$2}\">##{$2}</a>#{$3}"
     end
   end
+  
+  def get_member_photo(rsvp_info)
+    return "/images/sample_photo.jpg" if rsvp_info["photo_url"].blank? 
+    rsvp_info["photo_url"].gsub("member_", "thumb_")
+  end
 end

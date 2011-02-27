@@ -13,11 +13,7 @@ class TwitterCache < ActiveRecord::Base
   
   def self.get_twitter_feed
     feed = []
-    
-    Twitter::Search.new.from('RubyBayou').per_page(3).each do |tweet|
-      feed << tweet
-    end
-    
+    feed << Twitter.user("rubybayou").status
     feed
   end
   

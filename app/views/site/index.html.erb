@@ -1,29 +1,75 @@
-<div id="about" class="column">
-  <h1>About Us</h1>
-  <p>Ruby Bayou is the user group for the Ruby developer community in New Orleans. We exist to promote and explore the use of Ruby as a programming language as well as engage with other technology and community groups in the New Orleans metro area.</p>
-  <h2>Keeping Up</h2>
-  <p>If you want to stay informed about monthly meetings and events please subscribe to our <a href="http://eepurl.com/hcia">announcement list</a>.</p>
-  <h2>Want to Learn Ruby?</h2>
-  <p>We're organizing a class to teach folks how to program with Ruby, whether you are coming from another language or have no previous programming experience. Classes will begin in December or January and will be as cheap as we can make it. James Thompson and one or more other experienced members of our group will lead the course. Interested? Fill out <a href="http://bit.ly/teachrubynola">the interest form</a> and we'll keep you in the loop.</p>
+<div id="details" class="clear">
+	<ul>
+		<li id="when">
+			<h2>The When</h2>
+			<div id="ribbon" class="clear">
+				<div id="date" class="left">
+					<%= Time.at(@latest_event["time"] / 1000).strftime("%B %e, %Y") %>
+				</div>
+				<div id="time" class="right">
+					<%= Time.at(@latest_event["time"] / 1000).strftime("%l:%M%P") %>
+				</div>
+			</div>
+			<p>
+				<%=raw(@latest_event["description"] || "<p>This month's topic has yet to be announced, but when it is, it will, without exaggeration, <strong>change the entire face and brains of computing as we know it*</strong>.</p><p> In the meantime, <a href='http://http://www.meetup.com/RubyBayou/'><strong>join our MeetUp site</strong></a> to be notified of future announcements.</p>") %>
+			</p>
+		</li>
+		<li id="where">
+			<h2>The Where</h2>
+			<div id="map">
+				<a href="http://bit.ly/gAJxlJ"><img src="/images/map.png" alt="Ruby Bayou meetup location - 643 Magazine Street suite 102" /></a>
+				<p>
+					We meet at <a href="http://bit.ly/gAJxlJ"><strong>643 Magazine Street</strong></a>, known as <strong>Launchpad</strong>, in <strong>suite 102</strong>.
+				</p>
+			</div>
+		</li>
+		<li id="what">
+			<h2>The What</h2>
+			<p>
+				Ruby Bayou is the user group for the Ruby developer community in New Orleans. We exist to promote and explore the use of Ruby as a programming language as well as engage with other technology and community groups in the New Orleans metro area. We're also really awesome and have a pretty good sense of fashion.
+			</p>
+		</li>
+	</ul>
 </div>
-<div id="twitter" class="column">
-  <h1>Twitter</h1>
-  <ul>
-  <% @tweets.each do |tweet| %>
-    <li><%= raw(linkify_twitter_text(tweet.text)) %> <small>(<%= raw(time_ago_in_words(tweet.datetime)) %>)</small></li>
-  <% end %>
-  </ul>
-  <a href="http://twitter.com/RubyBayou" id="twitter-link" style="display:block;text-align:right;">Keep up on Twitter</a>
+<div id="planning" class="clear">
+	<h3>Who's Planning To Go</h3>
+	<ul>
+		<% @rsvps_collection.each do |rsvps| %>
+				<% if rsvps.rsvp["response"] == "yes" %>
+					<li>
+						<a href="<%= rsvps.rsvp["link"] %>" class="tip" title="<%= rsvps.rsvp["name"] %>">
+							<img src="<%= get_member_photo(rsvps.rsvp) %>" />
+						</a>
+					</li>
+				<% end %>
+		<% end %>
+	</ul>
 </div>
-<div id="meeting" class="column">
-	<h1>Upcoming Meeting</h1>
-	<h2>iSeatz</h2>
-	<div id="calendar-tile">
-		<div id="month">January</div>
-		<span>27</span>
-		<div id="time">7:00 pm</div>
-	</div>
-	<p>Paul Christmann, from <a href="http://www.iseatz.com">iSeatz</a>, will be presenting on how their team makes use of Ruby and Rails to power their large-scale applications. They're also providing Pizza!</p>
-  <p>For the new year we've moved our meeting location to <a href="http://launchpadnola.com">Launchpad</a>, but our meeting time is still the same, 7:00p.</p>
-  <p>RSVP with us over at our <a href="http://www.meetup.com/RubyBayou/">Meetup group</a>.</p>
+<div id="twitter">
+	<p>
+		<a href="http://twitter.com/rubybayou">@rubybayou</a>: <%= raw(linkify_twitter_text(@latest_tweet.text)) %>
+	</p>
+</div>
+<div id="projects">
+	<h2>The Projects</h2>
+	<ul>
+		<li>
+			<div class="info">
+				<a href="#" class="title">Pothole Project</a>
+				<span class="author">by Joe Ellis</span>
+			</div>
+			<p>
+				Ruby Bayou is the user group for the Ruby developer community in New Orleans. We exist to promote and explore the use of Ruby as a programming language as well as engage with other technology and community groups in the New Orleans metro area.
+			</p>
+		</li>
+		<li>
+			<div class="info">
+				<a href="#" class="title">Pothole Project</a>
+				<span class="author">by Joe Ellis</span>
+			</div>
+			<p>
+				Ruby Bayou is the user group for the Ruby developer community in New Orleans. We exist to promote and explore the use of Ruby as a programming language as well as engage with other technology and community groups in the New Orleans metro area.
+			</p>
+		</li>
+	</ul>
 </div>

@@ -28,7 +28,7 @@ body {
 	margin:0px auto;
 	font-family:'Helvetica',sans-serif;
 	font-size:12px;
-	border-top:3px solid #550a00;
+	border-top:5px solid #550a00;
 }
 ol, ul {
 	list-style: none;
@@ -83,10 +83,25 @@ strong {
 	float:right;
 }
 
-.clear {
-	overflow:hidden;
-	clear:both;
+* html .clear{
+  height: 1%;
+  overflow: visible;
 }
+
+*+html .clear{
+  min-height: 1%;
+}
+
+
+.clear:after{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  font-size: 0;
+}
+
 .hidden {
 	display:none;
 }

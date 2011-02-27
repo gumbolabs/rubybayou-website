@@ -1,0 +1,1 @@
+RMeetup::Client.api_key = "2f5f3b5438a24371d2549731f7f6845"

@@ -30,4 +30,13 @@ module SiteHelper
     rsvp_info["photo_url"].gsub("member_", "thumb_")
   end
   
+  def get_date(time)
+    Time.at(time / 1000).strftime("%B %e, %Y")
+	end
+	
+	def get_time(time)
+	  start_time = Time.at(time / 1000)
+    end_time = Time.at((time / 1000) + 2.hours)
+	  "#{start_time.strftime("%l:%M%P")} - #{end_time.strftime("%l:%M%P")}"
+	end
 end

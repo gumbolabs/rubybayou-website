@@ -18,7 +18,7 @@
 }
 
 #main #logo {
-	padding:50px 0;
+	padding:30px 0;
 }
 
 #main #logo h1 {
@@ -50,6 +50,7 @@
 	position:relative;
 	line-height:35px;
 	padding:0 28px;
+	width:225px;
 	left:-28px;
 	font-size:14px;
 	letter-spacing:-1px;
@@ -84,7 +85,7 @@
 
 #main #planning h3 {
 	background:url(../images/member_text.png) no-repeat;
-	width:169px;
+	width:152px;
 	height:24px;
 	text-indent:-9999px;
 	margin:0 auto 15px auto;
@@ -121,7 +122,7 @@
 }
 
 #main #projects {
-	margin-bottom:20px;
+	margin:20px 0;
 }
 
 #main #projects h2 {

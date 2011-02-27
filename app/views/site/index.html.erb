@@ -4,15 +4,15 @@
 			<h2>The When</h2>
 			<div id="ribbon" class="clear">
 				<div id="date" class="left">
-					<%= Time.at(@latest_event["time"] / 1000).strftime("%B %e, %Y") %>
+					<%= get_date(@latest_event["time"]) %>
 				</div>
 				<div id="time" class="right">
-					<%= Time.at(@latest_event["time"] / 1000).strftime("%l:%M%P") %>
+					<%= get_time(@latest_event["time"]) %>
 				</div>
 			</div>
 			<% if @latest_event["description"].blank? %>
 				<p>
-					This month's topic has yet to be announced, but when it is, it will most likely <strong>change the entire face and brains of computing as we know it*</strong>.</p>
+					This month's topic has yet to be announced, but when it is, it will most likely <strong>change the entire face and course of computing, history, and humanity as we know it*</strong>.</p>
 				<p>
 					In the meantime, <a href='http://http://www.meetup.com/RubyBayou/'><strong>join our MeetUp site</strong></a> to be notified of future announcements.
 				</p>

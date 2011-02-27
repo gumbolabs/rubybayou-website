@@ -22,13 +22,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 body {
 	line-height: 1;
-	color: #454646;
 	background:#fff url(../../images/background.jpg);
 	color:#3d3e3e;
 	margin:0px auto;
 	font-family:'Helvetica',sans-serif;
 	font-size:12px;
-	border-top:5px solid #550a00;
+	border-top:5px solid #053648;
 }
 ol, ul {
 	list-style: none;

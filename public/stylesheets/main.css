@@ -24,8 +24,8 @@
 #main #logo h1 {
 	text-indent:-9999px;
 	background:url(../images/logo.png);
-	width:414px;
-	height:130px;
+	width:802px;
+	height:147px;
 	margin:0 auto;
 }
 
@@ -41,10 +41,6 @@
 	width:237px;
 	padding:0 15px;
 	float:left;
-}
-
-#main #details ul li p {
-	margin-bottom:8px;
 }
 
 #main #details ul li#when #ribbon {
@@ -69,8 +65,17 @@
 	font-weight:normal;
 }
 
+#main #details ul li#where img {
+	margin-bottom:5px;
+}
+
 #main #details ul li p {
 	line-height:20px;
+	margin-bottom:8px;
+}
+
+#main #details ul li p:last-child {
+	margin-bottom:0px;
 }
 
 #main #planning {

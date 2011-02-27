@@ -29,4 +29,5 @@ module SiteHelper
     return "/images/sample_photo.jpg" if rsvp_info["photo_url"].blank? 
     rsvp_info["photo_url"].gsub("member_", "thumb_")
   end
+  
 end

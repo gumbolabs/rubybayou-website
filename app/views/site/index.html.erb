@@ -10,9 +10,17 @@
 					<%= Time.at(@latest_event["time"] / 1000).strftime("%l:%M%P") %>
 				</div>
 			</div>
-			<p>
-				<%=raw(@latest_event["description"] || "<p>This month's topic has yet to be announced, but when it is, it will, without exaggeration, <strong>change the entire face and brains of computing as we know it*</strong>.</p><p> In the meantime, <a href='http://http://www.meetup.com/RubyBayou/'><strong>join our MeetUp site</strong></a> to be notified of future announcements.</p>") %>
-			</p>
+			<% if @latest_event["description"].blank? %>
+				<p>
+					This month's topic has yet to be announced, but when it is, it will most likely <strong>change the entire face and brains of computing as we know it*</strong>.</p>
+				<p>
+					In the meantime, <a href='http://http://www.meetup.com/RubyBayou/'><strong>join our MeetUp site</strong></a> to be notified of future announcements.
+				</p>
+			<% else %>
+				<p>
+					<%= raw(@latest_event["description"]) %>
+				</p>
+			<% end %>
 		</li>
 		<li id="where">
 			<h2>The Where</h2>
@@ -26,7 +34,10 @@
 		<li id="what">
 			<h2>The What</h2>
 			<p>
-				Ruby Bayou is the user group for the Ruby developer community in New Orleans. We exist to promote and explore the use of Ruby as a programming language as well as engage with other technology and community groups in the New Orleans metro area. We're also really awesome and have a pretty good sense of fashion.
+				Ruby Bayou is the super awesome user group for the Ruby developer community in New Orleans and the GNO area.
+			</p>
+			<p>
+				We exist to promote and explore the use of Ruby as a programming language, promote Ruby based projects, and engage with other technology and community groups in the New Orleans metro area. 
 			</p>
 		</li>
 	</ul>
